@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="./src/output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-areas:
+        "a b";
+    }
+
+    .a {
+      grid-area: a;
+    }
+
+    .b {
+      grid-area: b;
+    }
+  </style>
+</head>
+
+<body class="m-0 p-0 box-border font-epilogue text-[18px] bg-almost-white">
+  <main class="px-10 py-5 md:mx-auto md:w-[1440px]">
+    <nav class="flex justify-between items-center mb-10 text-m-grey ">
+      <div class="items-center gap-10 hidden md:flex">
+        <a href="#"><img class="mr-5" src="./images/logo.svg" alt="logo"></a>
+        <ul class="flex gap-14">
+          <li class="relative group py-3">
+            <a href="#" class="flex items-center ">
+              <span class="hover:text-black">Features</span>
+              <span class="ml-1 hidden group-hover:block">
+                <img class="group" src="./images/icon-arrow-up.svg" width="10px" height="10px" alt="arrowUp">
+              </span>
+              <span class="ml-1 group-hover:hidden">
+                <img src="./images/icon-arrow-down.svg" width="10px" height="10px" alt="arrowDown">
+              </span>
+            </a>
+            <div class="absolute mt-0 top-full right-0 hidden group-hover:block -z-5">
+              <div class=" border border-solid border-transparent shadow-2xl bg-white w-[200px] h-[210px] rounded-xl ">
+                <div class="flex flex-col items-start justify-center">
+                  <div class="flex flex-col items-center w-[200px] h-[180px] py-5">
+                    <a href="#" class="flex items-center pb-3 mt-2">
+                      <span class="mr-1">
+                        <img class="" src="./images/icon-todo.svg" width="25px" height="25px" alt="todo">
+                      </span>
+                      <span class="ml-2">Todo List</span>
+                    </a>
+                    <a href="#" class="flex items-center pb-3">
+                      <span class="mr-1">
+                        <img class="" src="./images/icon-calendar.svg" width="25px" height="25px" alt="calender">
+                      </span>
+                      <span class="ml-2">Calendar</span>
+                    </a>
+                    <a href="#" class="flex items-center pb-3">
+                      <span class="mr-2">
+                        <img class="ml-2" src="./images/icon-reminders.svg" width="25px" height="25px" alt="reminder">
+                      </span>
+                      <span class="ml-1">Reminder</span>
+                    </a>
+                    <a href="#" class="flex items-center ">
+                      <span class="mr-1">
+                        <img class="mr-1" src="./images/icon-planning.svg" width="25px" height="25px" alt="planning">
+                      </span>
+                      <span class="ml-1">Planning</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="relative group py-3">
+            <a href="#" class="flex items-center ">
+              <span class="hover:text-black">Company</span>
+              <span class="ml-1 hidden group-hover:block">
+                <img class="group" src="./images/icon-arrow-up.svg" width="10px" height="10px" alt="arrowDown">
+              </span>
+              <span class="ml-1 group-hover:hidden">
+                <img src="./images/icon-arrow-down.svg" width="10px" height="10px" alt="arrowDown">
+              </span>
+            </a>
+            <div class="absolute mt-0 top-full left-0 hidden group-hover:block -z-5">
+              <div
+                class=" border border-solid border-transparent shadow-2xl bg-white w-[150px] h-[150px] rounded-xl p-auto">
+                <div class="flex flex-col items-start justify-center px-6 py-6">
+                  <div class="flex items-center justify-start">
+                    <div class="flex flex-col items-start gap-3">
+                      <a href="#" class="">History</a>
+                      <a href="#" class="">Our Team</a>
+                      <a href="#" class="">Blog</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="relative group py-3">
+            <a href="#" class="flex items-center ">
+              <span class="hover:text-black">Careers</span>
+            </a>
+          </li>
+          <li class="relative group py-3">
+            <a href="#" class="flex items-center ">
+              <span class="hover:text-black">About</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="hidden md:flex gap-14 items-center">
+        <a href="#" class="hover:text-black">Login</a>
+        <a class="border-2 border-solid border-black rounded-xl px-4 py-2 hover:border-transparent hover:bg-almost-black hover:text-white transition ease-in duration-200"
+          href="#">Register</a>
+      </div>
+      <!------------------------------MOBILE---------------------------------->
+      <div class="flex justify-between items-center md:hidden w-[510px] mt-0 py-3">
+        <a href="#"><img class="" src="./images/logo.svg" alt="logo"></a>
+        <div class="">
+          <button type="button" onclick="overlay()" class=""><img
+              src="./images/icon-menu.svg" alt="menu"></button>
+        </div>
+      </div>
+      <div id="overlay" class="hidden fixed inset-0 bg-black opacity-50 z-5"></div>
+      <div class="md:hidden overflow-auto">
+        <div id="navside" class="hidden border border-solid border-transparent bg-white w-[350px] h-[100%] fixed top-0 right-0 left-auto z-10">
+          <nav class="flex justify-end px-10 py-15 items-center -mr-2 mt-5 ">
+            <button type="button" onclick="overlay1()" class=""><img
+                src="./images/icon-close-menu.svg" width="40px" height="40px" alt="close menu"></button>
+          </nav>
+          <div class="flex flex-row items-center justify-start relative z-10 ">
+            <ul class="text-2xl w-[350px] px-10 py-5">
+              <li class="">
+                <a href="#" onclick="drop()" class="flex items-center mb-10">
+                  <span class="hover:text-black">Features</span>
+                  <span class="ml-2">
+                    <img id="up" class="hidden" src="./images/icon-arrow-up.svg" width="10px" height="10px" alt="arrowUp">
+                  </span>
+                  <span class="">
+                    <img id="down" src="./images/icon-arrow-down.svg" width="10px" height="10px" alt="arrowDown">
+                  </span>
+                </a>
+                <div id="fdrop" class="hidden pb-5">
+                  <div class="flex flex-col -mt-4 px-7 pb-5 ">
+                    <a href="#" class="flex items-center pb-5 mt-2">
+                      <span class="mr-1">
+                        <img class="" src="./images/icon-todo.svg" width="25px" height="25px" alt="todo">
+                      </span>
+                      <span class="ml-2">Todo List</span>
+                    </a>
+                    <a href="#" class="flex items-center pb-5">
+                      <span class="mr-1">
+                        <img class="" src="./images/icon-calendar.svg" width="25px" height="25px" alt="calender">
+                      </span>
+                      <span class="ml-2">Calendar</span>
+                    </a>
+                    <a href="#" class="flex items-center pb-5">
+                      <span class="mr-2">
+                        <img class="" src="./images/icon-reminders.svg" width="25px" height="25px" alt="reminder">
+                      </span>
+                      <span class="ml-1">Reminder</span>
+                    </a>
+                    <a href="#" class="flex items-center ">
+                      <span class="mr-1">
+                        <img class="mr-1" src="./images/icon-planning.svg" width="25px" height="25px" alt="planning">
+                      </span>
+                      <span class="ml-1">Planning</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="group">
+                <a href="#" onclick="drop1()" class="flex items-center mb-10">
+                  <span class="hover:text-black">Company</span>
+                  <span class="ml-2">
+                    <img id="up1" class="hidden" src="./images/icon-arrow-up.svg" width="10px" height="10px" alt="arrowUp">
+                  </span>
+                  <span class="">
+                    <img id="down1" src="./images/icon-arrow-down.svg" width="10px" height="10px" alt="arrowDown">
+                  </span>
+                </a>
+                <div id="fdrop1" class="hidden pb-5">
+                  <div class=" flex flex-col -mt-4 px-7 pb-5 ">
+                    <a href="#" class="flex items-center pb-5 mt-2">
+                      <span class="">History</span>
+                    </a>
+                    <a href="#" class="flex items-center pb-5">
+                      <span class="">Our Team</span>
+                    </a>
+                    <a href="#" class="flex items-center pb-5">
+                      <span class="">Blog</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li><a href="#" class="flex items-center mb-10">
+                  <span class="hover:text-black">Careers</span>
+                </a></li>
+              <li><a href="#" class="flex items-center mb-10">
+                  <span class="hover:text-black">About</span>
+                </a></li>
+              <div class="flex flex-col items-center justify-center mt-15 ">
+                <li class="w-[400px] mb-8 text-center">
+                  <a href="#" class="hover:text-black">Login</a>
+                </li>
+                <li class="w-[400px] text-center">
+                  <a class="border-2 border-solid border-black rounded-xl px-[70px] py-2 hover:border-transparent hover:bg-almost-black hover:text-white transition ease-in duration-200"
+                    href="#">Register</a></li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!---------------------------------------------------------------->
+    <section class="grid justify-between items-center">
+      <div class="a max-w-[650px] md:ml-32">
+        <div class="flex flex-col items-center text-center md:items-start md:text-start w-[510px] ">
+          <img class="block md:hidden w-[650px] " src="./images/image-hero-mobile.png" alt="mobile">
+          <h1 class="font-bold text-5xl mt-16 mb-8 block md:hidden whitespace-nowrap">Make remote work</h1>
+          <h1 class="font-bold text-7xl mt-20 hidden md:block">Make</h1>
+          <h1 class="font-bold text-7xl mb-10 hidden md:block ">remote work</h1>
+          <p class="max-w-[480px] mb-10">Get your team in sync, no matter your location. Streamline processes,
+            create team rituals, and watch productivity soar.</p>
+          <button
+            class="border border-solid border-transparent bg-black text-white font-bold rounded-xl px-8 py-4 hover:bg-transparent hover:border-black hover:text-black transition ease-in duration-200"
+            type="button">Learn more</button>
+        </div>
+        <div class="flex gap-10 mb:object-cover mt-20 max-w-[650px] justify-start items-center">
+          <img src="./images/client-databiz.svg" alt="databiz">
+          <img src="./images/client-audiophile.svg" alt="audiophile">
+          <img src="./images/client-meet.svg" alt="meet">
+          <img src="./images/client-maker.svg" alt="maker">
+        </div>
+      </div>
+      <div class="b">
+        <img class="mr-32 hidden md:block" src="./images/image-hero-desktop.png" width="420px" height="420px"
+          alt="desktop">
+      </div>
+    </section>
+  </main>
+  <script>
+    function drop() {
+      var x = document.getElementById("fdrop");
+      var up = document.getElementById("up");
+      var down = document.getElementById("down");
+
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        up.style.display = "block";
+        down.style.display = "none";
+      } else {
+        x.style.display = "none";
+        up.style.display = "none";
+        down.style.display = "block";
+      }
+    }
+
+    function drop1() {
+      var x = document.getElementById("fdrop1");
+      var up = document.getElementById("up1");
+      var down = document.getElementById("down1");
+
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        up.style.display = "block";
+        down.style.display = "none";
+      } else {
+        x.style.display = "none";
+        up.style.display = "none";
+        down.style.display = "block";
+      }
+    }
+
+    function overlay(){
+      let x = document.getElementById('navside');
+      let y = document.getElementById('overlay');
+      x.style.display='block';
+      y.style.display='block';
+    }
+
+    function overlay1(){
+      let x = document.getElementById('navside');
+      let y = document.getElementById('overlay');
+      x.style.display='none';
+      y.style.display='none';
+    }
+  </script>
+  <!--<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Kim</a>.
+  </div> -->
+</body>
+
+</html>
